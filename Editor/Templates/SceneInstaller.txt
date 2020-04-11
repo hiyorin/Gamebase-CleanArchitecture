@@ -1,0 +1,24 @@
+using Gamebase.Scene;
+using UnityEngine;
+using Zenject;
+
+namespace {namespace}.Presentation.Scene
+{
+    public sealed class {name}SceneInstaller : MonoInstaller
+    {
+        [SerializeField] private {name}Scene main = default;
+        
+        public override void InstallBindings()
+        {
+            // ISceneLifecycle
+            Container.Bind<ISceneLifecycle>().FromInstance(main).AsSingle();
+            
+            // UseCases
+            
+            // Presenters
+            
+            // Views
+            
+        }
+    }
+}

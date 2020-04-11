@@ -1,8 +1,13 @@
 {
-    "name": "[PackageName]",
+    "name": "Gamebase-CleanArchitecture.Editor",
     "references": [
+        "GUID:2459b26c9ca8240c8a077ef715f55797",
+        "GUID:48f37a7b1d57c4be8be5bc225fbbf17d",
+        "GUID:48e842e58dbf74d7ca426110ff506674"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

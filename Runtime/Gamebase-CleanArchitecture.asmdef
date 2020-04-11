@@ -1,10 +1,7 @@
 {
-    "name": "[PackageName].Editor",
-    "references": [
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "Gamebase-CleanArchitecture",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

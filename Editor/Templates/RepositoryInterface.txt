@@ -1,0 +1,9 @@
+using Gamebase.CleanArchitecture;
+
+namespace {namespace}.Domain.Repository
+{
+    public interface I{name}Repository : IRepository
+    {
+        
+    }
+}

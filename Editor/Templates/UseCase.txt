@@ -1,0 +1,37 @@
+using Gamebase.CleanArchitecture;
+using UniRx;
+using UniRx.Async;
+
+namespace {namespace}.Domain.UseCase
+{
+    public interface I{name}UseCase : IUseCase
+    {
+        UniTask Initialize();
+        
+        void Dispose();
+    }
+    
+    public interface {name}UseCase : I{name}UseCase
+    {
+        private readonly CompositeDisposable disposable = new CompositeDisposable();
+         
+        public {name}UseCase()
+        {
+        
+        }
+        
+#region I{name}UseCase implementation
+
+        async UniTask I{name}UseCase.Initialize()
+        {
+            
+        }
+        
+        void I{name}UseCase.Dispose()
+        {
+            disposable.Dispose();
+        }
+        
+#endregiion
+    }
+}

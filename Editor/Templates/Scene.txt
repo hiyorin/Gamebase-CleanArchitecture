@@ -1,0 +1,34 @@
+using Gamebase.Scene;
+using UnityEngine;
+using UniRx.Async;
+
+namespace {namespace}.Presentation.Scene
+{
+    public sealed class {name}Scene : MonoBehaviour, ISceneLifecycle
+    {
+        
+        #region ISceneLifecycle implementation
+        
+        async UniTask ISceneLifecycle.OnInitialize(object transData)
+        {
+            
+        }
+        
+        async UniTask ISceneLifecycle.OnFadeIn()
+        {
+            
+        }
+        
+        async UniTask ISceneLifecycle.OnFadeOut()
+        {
+            
+        }
+        
+        void ISceneLifecycle.OnDispose()
+        {
+            
+        }
+    
+        #endregion    
+    }
+}

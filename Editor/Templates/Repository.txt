@@ -1,0 +1,16 @@
+using {namespace}.Domain.Repository;
+
+namespace {namespace}.Data.Repository
+{
+    public sealed class {name}Repository : {interface}
+    {
+        public {name}Repository()
+        {
+            
+        }
+        
+        #region {interface} implementation
+        
+        #endregion
+    }
+}

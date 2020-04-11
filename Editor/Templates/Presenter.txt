@@ -1,0 +1,16 @@
+using {namespace}.Domain.Presenter;
+
+namespace {namespace}.Presentation.Presenter
+{
+    public sealed class {name}Presenter : {interface}
+    {
+        public {name}Presenter()
+        {
+            
+        }
+        
+        #region {interface} implementation
+        
+        #endregion
+    }
+}

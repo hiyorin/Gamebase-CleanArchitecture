@@ -1,0 +1,9 @@
+using Gamebase.CleanArchitecture;
+
+namespace {namespace}.Domain.Presenter
+{
+    public interface I{name}Presenter : IPresenter
+    {
+        
+    }
+}
