@@ -28,7 +28,7 @@ namespace Gamebase.CleanArchitecture.Editor
         {
             index = EditorGUILayout.Popup("Interface", index, interfaces);
             name = EditorGUILayout.TextField("Name", name);
-            return !string.IsNullOrEmpty(name);
+            return interfaces.Length > 0 && !string.IsNullOrEmpty(name);
         }
         
         void IAssetCreator.OnCreate(CleanArchitectureSettings settings)
