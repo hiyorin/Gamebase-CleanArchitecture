@@ -1,5 +1,7 @@
+using System.IO;
 using Gamebase.Editor;
 using UnityEditor;
+using UnityEngine;
 
 namespace Gamebase.CleanArchitecture.Editor
 {
@@ -15,9 +17,12 @@ namespace Gamebase.CleanArchitecture.Editor
             foreach (var newSubFolderName in newSubFolderNames)
             {
                 if (!AssetDatabase.IsValidFolder($"{parentFolder}/{newFolderName}/{newSubFolderName}"))
+                {
+                    // create folder and gitkeep
                     AssetDatabase.CreateFolder($"{parentFolder}/{newFolderName}", newSubFolderName);
+                    File.WriteAllText($"{Application.dataPath}/../{parentFolder}/{newFolderName}/{newSubFolderName}/.gitkeep", "");
+                }
             }
-            
         }
 
         private void CreateAssemblyDefine(string parentFolder, string newFolderName, params string[] references)
