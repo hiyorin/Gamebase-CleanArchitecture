@@ -6,17 +6,20 @@ namespace Gamebase.CleanArchitecture.Editor
 {
     public sealed class UseCaseCreator : IAssetCreator
     {
+        private string name;
+        
         void IAssetCreator.OnInitialize(CleanArchitectureSettings settings)
         {
 
         }
         
-        void IAssetCreator.OnDrawProperties()
+        bool IAssetCreator.OnDrawProperties()
         {
-            
+            name = EditorGUILayout.TextField("Name", name);
+            return !string.IsNullOrEmpty(name);
         }
         
-        void IAssetCreator.OnCreate(string name, CleanArchitectureSettings settings)
+        void IAssetCreator.OnCreate(CleanArchitectureSettings settings)
         {
             var template = AssetDatabase.LoadAssetAtPath<TextAsset>("Packages/com.gamebase.clean-architecture/Editor/Templates/UseCase.txt");
             

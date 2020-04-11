@@ -11,6 +11,8 @@ namespace Gamebase.CleanArchitecture.Editor
 
         private int index;
 
+        private string name;
+        
         void IAssetCreator.OnInitialize(CleanArchitectureSettings settings)
         {
             var rootPath = AssetDatabase.GetAssetPath(settings.RootFolder);
@@ -22,12 +24,14 @@ namespace Gamebase.CleanArchitecture.Editor
                 .ToArray();
         }
         
-        void IAssetCreator.OnDrawProperties()
+        bool IAssetCreator.OnDrawProperties()
         {
-            index = EditorGUILayout.Popup(index, interfaces);
+            index = EditorGUILayout.Popup("Interface", index, interfaces);
+            name = EditorGUILayout.TextField("Name", name);
+            return !string.IsNullOrEmpty(name);
         }
         
-        void IAssetCreator.OnCreate(string name, CleanArchitectureSettings settings)
+        void IAssetCreator.OnCreate(CleanArchitectureSettings settings)
         {
             var template = AssetDatabase.LoadAssetAtPath<TextAsset>("Packages/com.gamebase.clean-architecture/Editor/Templates/Presenter.txt");
             

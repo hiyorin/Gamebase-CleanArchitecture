@@ -8,8 +8,6 @@ namespace Gamebase.CleanArchitecture.Editor
     {
         private IAssetCreator creator;
         
-        private string className;
-
         private CleanArchitectureSettings settings;
 
         private SerializedObject serializedObject;
@@ -28,7 +26,7 @@ namespace Gamebase.CleanArchitecture.Editor
 
             var rect = focusedWindow.position;
             rect.y += 24.0f;
-            rect.height = 24.0f * 6.0f;
+            rect.height = 24.0f * 5.0f;
             position = rect;
 
             settings = GamebaseEditorUtility.Load<CleanArchitectureSettings>();
@@ -54,8 +52,7 @@ namespace Gamebase.CleanArchitecture.Editor
             
             EditorGUILayout.PropertyField(serializedObject.FindProperty("_rootFolder"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("_namespace"));
-            className = EditorGUILayout.TextField("Name", className);
-            creator.OnDrawProperties();
+            var customProperties = creator.OnDrawProperties();
 
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Cancel"))
@@ -64,10 +61,10 @@ namespace Gamebase.CleanArchitecture.Editor
                 return;
             }
             
-            EditorGUI.BeginDisabledGroup(!settings.RootFolder || string.IsNullOrEmpty(settings.Namespace) || string.IsNullOrEmpty(className));
+            EditorGUI.BeginDisabledGroup(!settings.RootFolder || string.IsNullOrEmpty(settings.Namespace) || !customProperties);
             if (GUILayout.Button("Create"))
             {
-                creator.OnCreate(className, settings);
+                creator.OnCreate(settings);
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
                 Close();

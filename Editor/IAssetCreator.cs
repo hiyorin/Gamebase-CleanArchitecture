@@ -4,8 +4,8 @@ namespace Gamebase.CleanArchitecture.Editor
     {
         void OnInitialize(CleanArchitectureSettings settings);
         
-        void OnDrawProperties();
+        bool OnDrawProperties();
         
-        void OnCreate(string name, CleanArchitectureSettings settings);
+        void OnCreate(CleanArchitectureSettings settings);
     }
 }

@@ -5,6 +5,8 @@ namespace Gamebase.CleanArchitecture.Editor
 {
     public sealed class ProjectCreator : IAssetCreator
     {
+        private string name;
+
         private void CreateFolder(string parentFolder, string newFolderName, params string[] newSubFolderNames)
         {
             if (!AssetDatabase.IsValidFolder($"{parentFolder}/{newFolderName}"))
@@ -31,12 +33,12 @@ namespace Gamebase.CleanArchitecture.Editor
 
         }
         
-        void IAssetCreator.OnDrawProperties()
+        bool IAssetCreator.OnDrawProperties()
         {
-            
+            return true;
         }
         
-        void IAssetCreator.OnCreate(string name, CleanArchitectureSettings settings)
+        void IAssetCreator.OnCreate(CleanArchitectureSettings settings)
         {
             var root = AssetDatabase.GetAssetPath(settings.RootFolder);
             CreateFolder(root, "Application");

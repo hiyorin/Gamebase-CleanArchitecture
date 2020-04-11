@@ -6,6 +6,8 @@ namespace Gamebase.CleanArchitecture.Editor
 {
     public sealed class SceneCreator : IAssetCreator
     {
+        private string name;
+        
         void IAssetCreator.OnInitialize(CleanArchitectureSettings settings)
         {
 
@@ -24,12 +26,13 @@ namespace Gamebase.CleanArchitecture.Editor
             File.WriteAllText(filePath, code);
         }
         
-        void IAssetCreator.OnDrawProperties()
+        bool IAssetCreator.OnDrawProperties()
         {
-            
+            name = EditorGUILayout.TextField("Name", name);
+            return !string.IsNullOrEmpty(name);
         }
         
-        void IAssetCreator.OnCreate(string name, CleanArchitectureSettings settings)
+        void IAssetCreator.OnCreate(CleanArchitectureSettings settings)
         {
             var rootPath = $"{Application.dataPath}/../{AssetDatabase.GetAssetPath(settings.RootFolder)}/Presentation/Scene";
             if (!Directory.Exists(rootPath))
