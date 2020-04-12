@@ -20,7 +20,7 @@ namespace {namespace}.Domain.UseCase
         
         }
         
-#region I{name}UseCase implementation
+        #region I{name}UseCase implementation
 
         async UniTask I{name}UseCase.Initialize()
         {
@@ -32,6 +32,6 @@ namespace {namespace}.Domain.UseCase
             disposable.Dispose();
         }
         
-#endregiion
+        #endregiion
     }
 }
