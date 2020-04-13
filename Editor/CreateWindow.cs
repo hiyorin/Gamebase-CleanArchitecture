@@ -44,7 +44,7 @@ namespace Gamebase.CleanArchitecture.Editor
 
         private void OnGUI()
         {
-            if (!settings)
+            if (!settings || creator == null)
             {
                 Close();
                 return;
