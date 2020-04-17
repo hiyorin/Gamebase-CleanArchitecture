@@ -2,8 +2,15 @@
 
 <br><br><br><br>
 ## Table Of Contents
+- [Description](#description)
 - [Install](#install)
 - [Usege](#usage)
+  - [Create Project]("#create-project)
+  - [Create File](#create-file)
+- [License](#license)
+
+<br><br><br><br>
+## Description
 
 <br><br><br><br>
 ## Install
@@ -36,3 +43,16 @@ Or, use [UpmGitExtension](https://github.com/mob-sakai/UpmGitExtension.git) to i
 
 <br><br><br><br>
 ## Usage
+
+#### Create Project
+- Right Click in folder within the Project tag and Choose `Create/Gamebase-CleanArchitecture/Project`.
+- Please set RootFolder and Namespace.
+- Click `Create` Button!
+
+#### Create File
+- Right Click in folder within the Project tag and Choose `Create/Gamebase-CleanArchitecture/*`.
+
+<br><br><br><br>
+## License
+This library is under the MIT License.  
+[here](LICENSE.md)
